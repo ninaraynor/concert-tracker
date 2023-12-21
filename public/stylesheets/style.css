@@ -3,13 +3,20 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
-a {
-  color: #00B7FF;
+nav {
+  display: flex;
+  align-items: center;
 }
 
-.login {
+nav a {
+  color: #00B7FF;
+  text-decoration: none;
+  margin-right: 10px; 
+}
+
+.login,
+.logout {
   display: flex;
-  justify-content: right;
   align-items: center;
   height: 34px;
 }
@@ -17,3 +24,4 @@ a {
 .login img {
   height: 20px;
 }
+
