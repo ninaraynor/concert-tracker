@@ -2,10 +2,9 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const concertSchema = new Schema({
-  artistOrBand: [{ 
-    type: Schema.Types.ObjectId, 
-    ref: 'ArtistOrBand' 
-}],
+  artist:  String,
+    // type: Schema.Types.ObjectId, 
+    // ref: 'ArtistOrBand' ,
   venue: String,
   date: Date,
   setlist: [{ 
@@ -13,7 +12,7 @@ const concertSchema = new Schema({
 }],
   rating: Number,
   review: [{
-    type: Schema.Types.ObjectId, ref: 'ConcertReview' 
+    type: String 
 }],
 }, {
     timestamps: true

@@ -1,3 +1,41 @@
 <%- include('../partials/header') %>
 
+<h2>Concert List</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Band/Artist:</th>
+      <th>Venue:</th>
+      <th>Date:</th>
+      <th>Setlist:</th>
+      <th>Rating:</th>
+      <th>Review:</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <% function formatCustomDate(date) {
+        if (!date) return 'N/A';
+
+        const options = { 
+          year: 'numeric', 
+          month: 'long', 
+          day: 'numeric' 
+        };  
+        return date.toLocaleDateString(undefined, options);
+      } %>
+      
+    <% concerts.forEach(function(c) { %>
+      <tr>
+        <td><%= c.artist %></td>
+        <td><%= c.venue %></td>
+        <td><%= formatCustomDate(c.date) %></td>
+        <td><%= c.setlist %></td>
+        <td><%= c.rating %></td>
+        <td><%= c.review %></td>
+      </tr>
+    <% }); %>
+  </tbody>
+</table>
+
 <%- include('../partials/footer') %>

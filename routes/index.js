@@ -23,7 +23,7 @@ router.get('/auth/google', passport.authenticate(
 router.get('/oauth2callback', passport.authenticate(
   'google',
   {
-    successRedirect: '/', // change later
+    successRedirect: '/concerts', // change later
     failureRedirect: '/concerts' // change later to what works best
   }
 ));

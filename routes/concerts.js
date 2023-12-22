@@ -6,6 +6,10 @@ const concertsCtrl = require('../controllers/concerts');
 router.get('/', concertsCtrl.index);
 // GET /concerts/new
 router.get('/new', concertsCtrl.new);
+// GET /concerts/:id
+
+// POST /concerts
+router.post('/', concertsCtrl.create);
 
 
 module.exports = router;

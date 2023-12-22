@@ -2,11 +2,11 @@
 
 <form id="new-form" action="/concerts" method="POST">
   <label>Band/Artist:</label>
-  <input type="text" name="band/artist"><br>
+  <input type="text" name="artist"><br>
   <label>Venue:</label>
   <input type="text" name="venue"><br>
   <label>Date:</label>
-  <input type="datetime-local" name="date"/><br>
+  <input type="date" id="date" name="date"><br>
   <label>Setlist:</label>
   <input type="text" name="setlist"/><br>
   <label>Rating:</label>
@@ -24,7 +24,7 @@
 </div>
   <label>Review:</label>
   <input type="text" name="review"/><br>
-  <input type="submit" value="Add Movie">
+  <input type="submit" value="Submit">
 </form>
 
 <%- include('../partials/footer') %>
