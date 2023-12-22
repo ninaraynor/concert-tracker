@@ -46,8 +46,16 @@ nav a {
   margin-bottom: 2rem;
 }
 
+.review-user {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-
+.review-user img {
+  border-radius: 50%;
+  height: 40px;
+}
 
 
 

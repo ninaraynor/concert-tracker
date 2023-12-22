@@ -5,13 +5,13 @@ const create= async(req, res) => {
     req.body.user = req.user._id;
     req.body.userName = req.user.name;
     req.body.userAvatar = req.user.avatar;
-    book.reviews.push(req.body);
+    concert.reviews.push(req.body);
     try {
       await concert.save();
     } catch (err) {
       console.log(err);
     }
-    res.redirect(`/concert/${concert._id}`);
+    res.redirect(`/concerts/${concert._id}`);
   }
 
 module.exports = {
