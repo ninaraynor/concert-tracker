@@ -8,12 +8,10 @@
       <th>Venue:</th>
       <th>Date:</th>
       <th>Setlist:</th>
-      <th>Rating:</th>
-      <th>Review:</th>
     </tr>
   </thead>
   <tbody>
-    
+
     <% function formatCustomDate(date) {
         if (!date) return 'N/A';
 
@@ -31,8 +29,7 @@
         <td><%= c.venue %></td>
         <td><%= formatCustomDate(c.date) %></td>
         <td><%= c.setlist %></td>
-        <td><%= c.rating %></td>
-        <td><%= c.review %></td>
+        <td><a href="/concerts/<%= c._id %>">DETAILS</a></td>
       </tr>
     <% }); %>
   </tbody>

@@ -1,0 +1,60 @@
+<%- include('../partials/header') %>
+
+<section id="show-page">
+    <div>Band/Artist: </div>
+    <div><%= concert.artist %></div>
+    <div>Venue: </div>
+    <div><%= concert.venue %></div>
+    <div>Date: </div>
+    <div><%= concert.date %></div>
+    <div>Setlist: </div>
+    <div><%= concert.setlist %></div>
+</section>
+
+<br><br><h2>Reviews</h2>
+<form id="add-review-form" method="POST" action="/concerts/<%= concert._id %>/reviews">
+  <label for="rating">Rating:</label>
+  <div class="stars">
+    <input type="radio" id="rate1" name="rating" value="1"/>
+    <label for="rate1" title="Terrible">1 star</label>
+    <input type="radio" id="rate2" name="rating" value="2"/>
+    <label for="rate2" title="Not good">2 stars</label>
+    <input type="radio" id="rate3" name="rating" value="3"/>
+    <label for="rate3" title="Average">3 stars</label>
+    <input type="radio" id="rate4" name="rating" value="4"/>
+    <label for="rate4" title="Very good">4 stars</label>
+    <input type="radio" id="rate5" name="rating" value="5"/>
+    <label for="rate5" title="Amazing">5 stars</label>
+  </div>
+  <label for="content">Review:</label>
+  <textarea name="content" id="content"></textarea>
+  <input type="submit" value="Add Review">
+</form>
+
+
+<% if (concert.reviews.length) { %>
+    <table>
+      <thead>
+        <tr>
+          <th>Date:</th>
+          <th>Rating:</th>
+          <th>Review:</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% let total = 0 %>
+        <% concert.reviews.forEach(function(r) { %>
+        <% total += r.rating %>
+          <tr>
+            <td class="review-user"><img alt="avatar" src="<%= r.userAvatar %>" referrerpolicy="no-referrer" ><%= r.userName %></td>
+            <td><%= r.createdAt.toLocaleDateString() %></td>
+            <td><%= r.rating %></td>
+            <td><%= r.content %></td>
+          </tr>
+        <% }); %>
+      </tbody>
+    </table>
+  <% } else { %>
+    <h5>No Reviews Yet</h5>
+  <% } %>
+<%- include('../partials/footer') %>
