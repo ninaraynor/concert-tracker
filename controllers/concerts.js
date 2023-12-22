@@ -5,6 +5,12 @@ const index = async (req, res) => {
   res.render('concerts/index', { title: 'Tracking Concerts', concerts });
 };
 
+function newConcert(req, res) {
+  // render an errorMsg if the create action fails
+  res.render('concerts/new', { title: 'Rate a Show!', errorMsg: '' });
+}
+
 module.exports = {
-    index
+    index, 
+    new: newConcert
 };

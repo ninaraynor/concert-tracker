@@ -1,0 +1,30 @@
+<%- include('../partials/header') %>
+
+<form id="new-form" action="/concerts" method="POST">
+  <label>Band/Artist:</label>
+  <input type="text" name="band/artist"><br>
+  <label>Venue:</label>
+  <input type="text" name="venue"><br>
+  <label>Date:</label>
+  <input type="datetime-local" name="date"/><br>
+  <label>Setlist:</label>
+  <input type="text" name="setlist"/><br>
+  <label>Rating:</label>
+ <div class="stars">
+    <input type="radio" id="rate1" name="rating" value="1"/>
+     <label for="rate1" title="Terrible">1 star</label>
+     <input type="radio" id="rate2" name="rating" value="2"/>
+     <label for="rate2" title="Not good">2 stars</label>
+     <input type="radio" id="rate3" name="rating" value="3"/>
+     <label for="rate3" title="Average">3 stars</label>
+     <input type="radio" id="rate4" name="rating" value="4"/>
+     <label for="rate4" title="Very good">4 stars</label>
+     <input type="radio" id="rate5" name="rating" value="5"/>
+     <label for="rate5" title="Amazing">5 stars</label>
+</div>
+  <label>Review:</label>
+  <input type="text" name="review"/><br>
+  <input type="submit" value="Add Movie">
+</form>
+
+<%- include('../partials/footer') %>
