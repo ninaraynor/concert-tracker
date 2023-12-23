@@ -25,12 +25,6 @@ nav a {
   height: 20px;
 }
 
-#new-form {
-  display: grid;
-  grid-gap: 10px;
-  grid-template-columns: repeat(2, minmax(auto, 22rem));
-}
-
 #add-review-form {
   display: grid;
   grid-template-columns: auto auto;

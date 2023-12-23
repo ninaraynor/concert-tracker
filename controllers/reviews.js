@@ -1,6 +1,7 @@
 const Concert = require('../models/concert');
+const Venue = require('../models/venue');
 
-const create= async(req, res) => {
+const create = async(req, res) => {
     const concert = await Concert.findById(req.params.id);
     req.body.user = req.user._id;
     req.body.userName = req.user.name;
