@@ -22,7 +22,7 @@ const create = async(req,res) => {
 
 const show = async(req, res) => {
   concert = await Concert.findById(req.params.id); 
-	res.render('concerts/show', { title: 'Concert Detail', concert})
+	res.render('concerts/show', { title: 'Concert Detail', concert })
 };
 
 const addReview = async (req, res) => {

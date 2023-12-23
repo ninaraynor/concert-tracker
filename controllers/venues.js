@@ -9,8 +9,18 @@ const newVenue = async(req, res) => {
   res.render('venues/new', { title: 'Add Venue', errorMsg: '' });
 };
 
+const create = async(req,res) => {
+  try {
+    await Venue.create(req.body);
+    res.redirect('/venues');
+  } catch (err) {
+    console.log(err);
+    res.render('venues/new', { errorMsg: err.message });
+  }
+};
 
 module.exports = {
     index,
-    new: newVenue
+    new: newVenue,
+    create
   };

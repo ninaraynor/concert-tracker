@@ -7,5 +7,7 @@ router.get('/', venuesCtrl.index);
 // GET /venues/new
 router.get('/new', venuesCtrl.new);
 // GET /venues/:id
+// POST /venues
+router.post('/', venuesCtrl.create);
 
 module.exports = router;
