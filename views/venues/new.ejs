@@ -1,0 +1,17 @@
+<%- include('../partials/header') %>
+
+<form id="new-form" action="/venues" method="POST">
+  <label>Venue Name:</label>
+  <input type="text" name="artist"><br>
+  <label>Location:</label>
+  <input type="text" name="venue"><br>
+  <label>Date Visited:</label>
+  <input type="date" id="date" name="date"><br>
+  <label>Indoor/Outdoor:</label>
+  <select name="indoorOutdoor">
+    <option value="indoor">Indoor</option>
+    <option value="outdoor">Outdoor</option>
+</select><br>
+  <input type="submit" value="Add Venue">
+</form>
+<%- include('../partials/footer') %>

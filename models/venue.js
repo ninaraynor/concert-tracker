@@ -4,17 +4,13 @@ const Schema = mongoose.Schema;
 const venueSchema = new Schema({
     name: String,
     location: String,
-    rating: {
-        type: Number,
-      },
-      user: {
-        type: Schema.Types.ObjectId,
-        ref: 'User',
-        required: true
-      },
-      userName: String,
-      userAvatar: String,
-    }, {
+    date: Date,
+    type: { 
+      type: String, 
+      enum: ['indoor', 'outdoor'] 
+  }, 
+    // reviews: [venueReviewSchema],
+  }, {
       timestamps: true
     });
 

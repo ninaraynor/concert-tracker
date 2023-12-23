@@ -1,4 +1,37 @@
 <%- include('../partials/header') %>
 
+<h2>Venue List</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Venue Name:</th>
+      <th>Location:</th>
+      <th>Date Visited:</th>
+      <th>Indoor/Outdoor:</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <% function formatCustomDate(date) {
+        if (!date) return 'N/A';
+
+        const options = { 
+          year: 'numeric', 
+          month: 'long', 
+          day: 'numeric' 
+        };  
+        return date.toLocaleDateString(undefined, options);
+      } %>
+      
+    <% venues.forEach(function(v) { %>
+      <tr>
+        <td><%= v.name %></td>
+        <td><%= v.location %></td>
+        <td><%= formatCustomDate(v.date) %></td>
+        <td><%= v.indoorOutdoor %></td>
+        <td><a href="/venues/<%= v._id %>">DETAILS</a></td>
+        <% }); %>
+  </tbody>
+</table>
 
 <%- include('../partials/footer') %>

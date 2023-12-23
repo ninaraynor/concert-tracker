@@ -29,7 +29,6 @@ const concertSchema = new Schema({
   setlist: [{ 
     type: String 
 }],
-  rating: Number,
   reviews: [reviewSchema],
 }, {
     timestamps: true
