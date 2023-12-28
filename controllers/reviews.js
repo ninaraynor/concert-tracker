@@ -1,5 +1,4 @@
 const Concert = require('../models/concert');
-const Review = require('../models/concert'); 
 
 const create = async(req, res) => {
   console.log(req.params.id)

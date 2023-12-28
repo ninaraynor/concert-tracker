@@ -22,8 +22,7 @@ const reviewSchema = new Schema({
 
 const concertSchema = new Schema({
   artist:  String,
-    // type: Schema.Types.ObjectId, 
-    // ref: 'ArtistOrBand' ,
+
   venue: String,
   date: Date,
   setlist: [{ 

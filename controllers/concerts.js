@@ -31,9 +31,7 @@ const addReview = async (req, res) => {
     req.body.user = req.user._id;
     req.body.userName = req.user.name;
     req.body.userAvatar = req.user.avatar;
-
     concert.reviews.push(req.body);
-
     await concert.save();
     res.redirect(`/concerts/${concert._id}`);
   } catch (err) {

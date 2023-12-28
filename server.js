@@ -7,19 +7,17 @@ var session = require('express-session');
 var passport = require('passport');
 const methodOverride = require('method-override');
 
-
 require('dotenv').config();
 // connect to the database with AFTER the config vars are processed
 require('./config/database');
 // config passport middleware
 require('./config/passport');
 
-
 var indexRouter = require('./routes/index');
 var concertsRouter = require('./routes/concerts');
 const reviewsRouter = require('./routes/reviews');
 const venuesRouter = require('./routes/venues');
-
+const venueReviewsRouter = require('./routes/venueReviews');
 
 var app = express();
 
@@ -53,6 +51,7 @@ app.use('/', indexRouter);
 app.use('/concerts', concertsRouter);
 app.use('/', reviewsRouter);
 app.use('/venues', venuesRouter);
+app.use('/', venueReviewsRouter);
 
 
 // catch 404 and forward to error handler
