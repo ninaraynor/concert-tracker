@@ -42,11 +42,10 @@ const addReview = async (req, res) => {
   }
 };
 
-
 module.exports = {
     index, 
     new: newConcert,
     create,
     show,
-    addReview
+    addReview,
 };

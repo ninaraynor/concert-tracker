@@ -12,7 +12,7 @@
 </section>
 
 <br><br><h2>Reviews</h2>
-<form id="add-review-form" method="POST" action="/concerts/<%= concert._id %>/reviews">
+<form id="add-review-form" method="POST" action="/<%= concert._id %>/reviews">
   <label for="rating">Rating:</label>
   <div class="stars">
     <input type="radio" id="rate1" name="rating" value="1"/>
@@ -50,6 +50,13 @@
             <td><%= r.createdAt.toLocaleDateString() %></td>
             <td><%= r.rating %></td>
             <td><%= r.content %></td>
+            <td>
+              <% if (user?._id.equals(r.user)) { %>
+                <form action="/reviews/<%= r._id %>?_method=DELETE" method="POST">
+                  <button type="submit">X</button>
+                </form>
+              <% } %>
+            </td>
           </tr>
         <% }); %>
       </tbody>
