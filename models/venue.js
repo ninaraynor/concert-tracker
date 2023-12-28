@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const reviewSchema = new Schema({
+const venueReviewSchema = new Schema({
   content: {
     type: String,
     required: true
@@ -28,7 +28,7 @@ const venueSchema = new Schema({
     type: String, 
     enum: ['indoor', 'outdoor'] 
   },    
-  venueReviews: [reviewSchema],
+  venueReviews: [venueReviewSchema],
   }, {
     timestamps: true
   });

@@ -24,15 +24,13 @@ const show = async(req, res) => {
   res.render('venues/show', { title: 'Venues Detail', venue })
 };
 
-const addReview = async (req, res) => {
+const addVenueReview = async (req, res) => {
   try {
     const venue = await Venue.findById(req.params.id);
     req.body.user = req.user._id;
     req.body.userName = req.user.name;
     req.body.userAvatar = req.user.avatar;
-
-    venue.reviews.push(req.body);
-
+    venue.venueReviews.push(req.body);
     await venue.save();
     res.redirect(`/venues/${venue._id}`);
   } catch (err) {
@@ -41,10 +39,11 @@ const addReview = async (req, res) => {
   }
 };
 
+
 module.exports = {
     index,
     new: newVenue,
     create,
     show,
-    addReview
+    addVenueReview
   };

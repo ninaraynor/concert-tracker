@@ -14,6 +14,15 @@ const create= async(req, res) => {
     res.redirect(`/venues/${venue._id}`);
   }
 
+  const deleteVenueReview = async (req, res) => {
+    const venue = await Venue.findOne({'venueReviews._id': req.params.id });
+    if (!venue) return res.redirect('/venues')
+    venue.venueReviews.remove(req.params.id)
+    await venue.save()
+    res.redirect(`/venues/${venue._id}`)
+  };
+
 module.exports = {
-  create
+  create,
+  delete: deleteVenueReview
 };
