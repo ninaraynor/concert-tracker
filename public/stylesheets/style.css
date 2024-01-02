@@ -1,6 +1,7 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: rgb(255, 255, 255);
 }
 
 nav {
@@ -20,7 +21,7 @@ nav a {
   align-items: center;
   height: 34px;
   color: rgb(195, 195, 195);
-  padding: 1.5px 4px 1.5px 5px;
+  padding: 2px 6px 2px 6px;
   background-color: rgb(0, 0, 0);
   border: 1.3px solid rgb(195, 195, 195);
   font-family: 'Rubik Mono One', monospace;
@@ -107,4 +108,74 @@ p {
 
 h2 {
   font-size: 1.5em;
+}
+
+#new-form, #new-form-venue {
+  max-width: 400px;
+  margin: 0 auto;
+  background-color: rgb(195, 195, 195);
+  color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#new-form label, #new-form-venue label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+#new-form input, #new-form select, #new-form-venue input, #new-form-venue select {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+
+#new-form input[type="submit"], #new-form-venue input[type="submit"] {
+  background-color: rgb(242, 0, 0);
+  color: #fff;
+  cursor: pointer;
+}
+
+#new-form input[type="submit"]:hover, #new-form-venue input[type="submit"]:hover {
+  background-color: rgb(181, 7, 7);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+thead {
+  background-color: #333;
+  color: #fff;
+}
+
+th, td {
+  padding: 12px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+a {
+  text-decoration: none;
+  color: #007bff; 
+}
+
+.submitbtn {
+  background-color: #dc3545;
+  color: #fff;
+  padding: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+.submitbtn:hover {
+  background-color: #c82333; 
 }
