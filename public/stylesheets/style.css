@@ -1,76 +1,83 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  background-color: rgb(255, 255, 255);
+  background-color: rgba(64, 57, 65, 0.869)
 }
 
 nav {
   display: flex;
   justify-content: space-between; 
   align-items: center;
+  padding-bottom: 20px;
 }
 
-nav a {
-  text-decoration: none;
-  margin-right: 10px; 
-}
-
-.login,
-.logout {
+.login {
   display: flex;
   align-items: center;
   height: 34px;
   color: rgb(195, 195, 195);
   padding: 2px 6px 2px 6px;
-  background-color: rgb(0, 0, 0);
-  border: 1.3px solid rgb(195, 195, 195);
+  background-color: rgb(0, 0, 0, 0.3);
+  border: 3px solid rgb(0, 0, 0);
   font-family: 'Rubik Mono One', monospace;
   word-spacing: -7px;
+  border-radius: 22px;
+}
+
+.login:hover {
+  background-color: rgb(0, 0, 0);
+}
+
+.logout {
+  display: flex;
+  align-items: center;
+  height: 34px;
+  color: rgb(0, 0, 0);
+  padding: 2px 6px 2px 6px;
+  background-color: rgba(195, 195, 195, 0.101);
+  border: 1.3px solid rgb(0, 0, 0);
+  font-family: 'Rubik Mono One', monospace;
+  word-spacing: -7px;
+  border-radius: 22px;
+}
+
+.logout:hover {
+  background-color: rgb(0, 0, 0);
+  color: rgb(195, 195, 195);
+  transition: color 0.3s ease;
 }
 
 .login img {
   height: 18px;
 }
 
-.dropbtn {
-  font-size: 16px;
-  border: 1.5px solid black;
-  outline: none;
+.navbar {
+  display: flex;
+  align-items: center;
+  height: 34px;
   color: rgb(0, 0, 0);
-  background-color: rgb(195, 195, 195);
-  padding: 14px 16px;
-  font-family: inherit;
-  margin: 0;
+  padding: 2px;
+  background-color: rgba(195, 195, 195, 0.101);
+  border: 1.3px solid rgb(0, 0, 0);
+  font-family: 'Rubik Mono One', monospace;
+  word-spacing: -7px;
+  border-radius: 20px;
 }
 
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  min-width: 160px;
-  z-index: 1;
-}
-
-.dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  background-color: rgb(195, 195, 195);
-  border: 2px solid black;
+.navbar a {
   text-decoration: none;
-  display: block;
-  text-align: left;
+  color: black; 
+  margin: 0 15px; 
+  font-family: 'Rubik Mono One', monospace;
+  font-size: 16px;
+  word-spacing: -5px;
 }
 
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-
-.dropdown-content a:hover {
-  background-color: rgb(185, 185, 185)
+.navbar a:hover {
+  color: rgb(195, 195, 195); 
+  padding: 10px 0px 10px 0px;
+  margin: 0 15px; 
+  border-radius: 16px;
 }
 
 #concert-crowd {
@@ -87,8 +94,8 @@ nav a {
 h1 {
   font-size: 8.5em;
   text-align: center;
-  margin-top: 56px;
-  margin-bottom: 6px; 
+  margin-top: 58px;
+  margin-bottom: 8px; 
   font-family: 'MuseoModerno', sans-serif;
   letter-spacing: -3.2px;
   color: rgb(0, 0, 0);
@@ -96,28 +103,32 @@ h1 {
 
 p {
   text-align: center;
-  font-size: 20px;
-  color: rgb(255, 255, 255, 0.6);
+  font-size: 22px;
+  color: rgba(185, 49, 142, 0.7);
   font-family: 'Rubik Mono One', monospace;
   word-spacing: -8px;
-  margin-top: 10px; 
-  margin-bottom: 25px; 
-  background-color: black;
-  font-style: italic;
+  margin-top: 4px; 
+  margin-bottom: 30px; 
+  opacity: .7;
 }
 
 h2 {
-  font-size: 1.5em;
+  font-size: 2em;
+  font-family: 'Roboto Mono', monospace;
+  text-align: center;
+  color: white;
+  text-transform: uppercase;
 }
 
 #new-form, #new-form-venue {
   max-width: 400px;
   margin: 0 auto;
-  background-color: rgb(195, 195, 195);
+  background-color: rgba(195, 195, 195, 0.479);
+  font-family: 'Roboto Mono', monospace;
   color: white;
   padding: 20px;
   border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 10px rgba(0, 0, 0);
 }
 
 #new-form label, #new-form-venue label {
@@ -130,10 +141,14 @@ h2 {
   padding: 8px;
   margin-bottom: 10px;
   box-sizing: border-box;
+  font-family: 'Roboto Mono', monospace;
+
 }
 
 #new-form input[type="submit"], #new-form-venue input[type="submit"] {
-  background-color: rgb(242, 0, 0);
+  background-color: rgb(0, 0, 0);
+  font-family: 'Roboto Mono', monospace;
+  text-transform: uppercase;
   color: #fff;
   cursor: pointer;
 }
@@ -178,4 +193,31 @@ a {
 
 .submitbtn:hover {
   background-color: #c82333; 
+}
+
+.rating {
+  display: inline-block;
+}
+
+.rating input {
+  display: none;
+}
+
+.rating label {
+  float: right;
+  cursor: pointer;
+  color: #ccc;
+  transition: color 0.3s;
+}
+
+.rating label:before {
+  content: '\2605';
+  font-size: 30px;
+}
+
+.rating input:checked ~ label,
+.rating label:hover,
+.rating label:hover ~ label {
+  color: #6f00ff;
+  transition: color 0.3s;
 }
