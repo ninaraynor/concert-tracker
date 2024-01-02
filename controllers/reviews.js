@@ -21,17 +21,6 @@ const create = async(req, res) => {
     concert.reviews.remove(req.params.id)
     await concert.save()
     res.redirect(`/concerts/${concert._id}`)
-    // try {
-    //   const review = await Review.findOneAndDelete({ _id: req.params.id });
-  
-    //   if (!review) {
-    //     return res.status(404).json({ message: 'Review not found' });
-    //   }
-    //   res.status(204).end();
-    // } catch (err) {
-    //   console.error(err);
-    //   res.status(500).json({ message: 'Internal Server Error' });
-    // }
   };
   
   module.exports = {

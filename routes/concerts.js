@@ -10,6 +10,9 @@ router.get('/new', concertsCtrl.new);
 router.get('/:id', concertsCtrl.show);
 // POST /concerts
 router.post('/', concertsCtrl.create);
+// DELETE /concerts/:id
+router.delete('/:id', concertsCtrl.delete);
 
 
 module.exports = router;
+

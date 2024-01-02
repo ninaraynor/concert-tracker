@@ -1,13 +1,19 @@
 const Concert = require('../models/concert');
+const Venue = require('../models/venue');
 
 const index = async (req, res) => {
   const concerts = await Concert.find({});
   res.render('concerts/index', { title: 'My Concert History', concerts });
 };
 
-const newConcert = (req, res) => {
-  // render an errorMsg if the create action fails
-  res.render('concerts/new', { title: 'Add Concert', errorMsg: '' });
+const newConcert = async (req, res) => {
+  try {
+    const venues = await Venue.find();
+    res.render('concerts/new', { title: 'Add Concert', errorMsg: '', venues });
+  } catch (error) {
+    console.error(error);
+    res.status(500).send('Internal Server Error');
+  }
 };
 
 const create = async(req,res) => {
@@ -40,10 +46,26 @@ const addReview = async (req, res) => {
   }
 };
 
+const deleteConcert = async (req, res) => {
+  try {
+    const concert = await Concert.findByIdAndDelete(req.params.id);
+    if (!concert) {
+      return res.status(404).json({ message: 'Concert not found' });
+    }
+    const updatedConcerts = await Concert.find(); 
+    res.status(200).redirect(`/concerts/`);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ message: 'Internal Server Error' });
+  }
+};
+
+
 module.exports = {
     index, 
     new: newConcert,
     create,
     show,
     addReview,
+    delete: deleteConcert
 };

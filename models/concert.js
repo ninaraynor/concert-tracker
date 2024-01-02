@@ -22,7 +22,6 @@ const reviewSchema = new Schema({
 
 const concertSchema = new Schema({
   artist:  String,
-
   venue: String,
   date: Date,
   setlist: [{ 
