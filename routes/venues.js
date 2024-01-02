@@ -10,5 +10,8 @@ router.get('/new', venuesCtrl.new);
 router.get('/:id', venuesCtrl.show);
 // POST /venues
 router.post('/', venuesCtrl.create);
+// DELETE /venues/:id
+router.delete('/:id', venuesCtrl.delete);
+
 
 module.exports = router;

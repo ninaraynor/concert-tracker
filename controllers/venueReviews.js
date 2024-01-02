@@ -12,7 +12,7 @@ const create= async(req, res) => {
       console.log(err);
     }
     res.redirect(`/venues/${venue._id}`);
-  }
+  };
 
   const deleteVenueReview = async (req, res) => {
     const venue = await Venue.findOne({'venueReviews._id': req.params.id });

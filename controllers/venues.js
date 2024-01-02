@@ -39,11 +39,25 @@ const addVenueReview = async (req, res) => {
   }
 };
 
+const deleteVenue = async (req, res) => {
+  try {
+    const venue = await Venue.findByIdAndDelete(req.params.id);
+    if (!venue) {
+      return res.status(404).json({ message: 'Venue not found' });
+    }
+    const updatedVenues = await Venue.find(); 
+    res.status(200).redirect(`/venues/`);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ message: 'Internal Server Error' });
+  }
+};
 
 module.exports = {
     index,
     new: newVenue,
     create,
     show,
-    addVenueReview
+    addVenueReview,
+    delete: deleteVenue
   };

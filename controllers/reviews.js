@@ -13,7 +13,7 @@ const create = async(req, res) => {
       console.log(err);
     }
     res.redirect(`/concerts/${concert._id}`);
-  }
+  };
 
   const deleteReview = async (req, res) => {
     const concert = await Concert.findOne({'reviews._id': req.params.id });
