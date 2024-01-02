@@ -1,29 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title><%= title %></title>
-  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=MuseoModerno:wght@900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap" rel="stylesheet">
+  <link rel='stylesheet' href='/stylesheets/style.css'/>
 </head>
 <body>
   <nav> 
     <% if (user) { %>
       <div class="navbar">
         <div class="dropdown">
-          <button class="dropbtn">Menu</button>
+          <button class="dropbtn">MENU</button>
           <div class="dropdown-content">
             <a href="/concerts" <%- title === 'All Concerts' ? 'class="active"' : '' %>>ALL CONCERTS</a>
             <a href="/concerts/new" <%- title === 'Add Concert' ? 'class="active"' : '' %>>ADD CONCERT</a>
-            <a href="/venues" <%- title === 'All Venues' ? 'class="active"' : '' %>>ALL VENUES</a>
-            <a href="/venues/new" <%- title === 'Add Venue' ? 'class="active"' : '' %>>ADD VENUE</a>
-          </div>
-        </div>
-      </div>
-      <a href="/logout" class="logout">LOG OUT</a>
-    <% } else { %>
-      <a href="/auth/google" class="login">LOG IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"></a>
-    <% } %>
-  </nav>
+           <a href="/venues" <%- title === 'All Venues' ? 'class="active"' : '' %>>ALL VENUES</a>
+           <a href="/venues/new" <%- title === 'Add Venue' ? 'class="active"' : '' %>>ADD VENUE</a>
+         </div>
+       </div>
+     </div>
+     <a href="/logout" class="logout">LOG OUT</a>
+     <% } else { %>
+       <a href="/auth/google" class="login">LOG IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"></a>
+     <% } %>
+   </nav>
 
-  <h1><%= title %></h1>
-</body>
+  </body>
 </html>
