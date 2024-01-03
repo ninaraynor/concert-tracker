@@ -46,7 +46,7 @@
         <% venue.venueReviews.forEach(function(r) { %>
         <% total += r.rating %>
           <tr>
-            <td class="review-user"><img alt="avatar" src="<%= r.userAvatar %>" referrerpolicy="no-referrer" ><%= r.userName %></td>
+            <td class="review-user"><img class="avatar-img" alt="avatar" src="<%= r.userAvatar %>" referrerpolicy="no-referrer" ><%= r.userName %></td>
             <td><%= r.createdAt.toLocaleDateString() %></td>
             <td><%= r.rating %></td>
             <td><%= r.content %></td>
