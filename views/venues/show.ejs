@@ -11,7 +11,7 @@
     <div><%= venue.indoorOutdoor %></div>
 </section>
 
-<br><br><h2>Reviews</h2>
+<br><br><h3>Submit A Review</h3>
 <form id="add-review-form" method="POST" action="/<%= venue._id %>/venueReviews">
   <label for="rating">Rating:</label>
     <div class="rating">
@@ -31,6 +31,7 @@
   <input type="submit" value="Add Review">
 </form>
 
+<h3>Reviews</h3>
 <% if (venue.venueReviews.length) { %>
     <table>
       <thead>
