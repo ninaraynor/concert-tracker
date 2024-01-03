@@ -6,7 +6,7 @@
     <tr>
       <th>Band/Artist:</th>
       <th>Venue:</th>
-      <th>Date:</th>
+      <th>Date Attended:</th>
       <th>Setlist:</th>
     </tr>
   </thead>
@@ -29,9 +29,9 @@
         <td><%= c.venue %></td>
         <td><%= formatCustomDate(c.date) %></td>
         <td><%= c.setlist %></td>
-        <td><a href="/concerts/<%= c._id %>">DETAILS</a>
+        <td><a class="details-link" href="/concerts/<%= c._id %>">DETAILS</a>
           <form action="/concerts/<%= c._id %>?_method=DELETE" method="POST">
-            <button class="submitbtn" type="submit">X</button>
+            <button class="submitbtn" type="submit">Delete</button>
           </form>
         </td>
       </tr>

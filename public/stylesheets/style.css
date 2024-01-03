@@ -1,7 +1,7 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  background-color: rgba(64, 57, 65, 0.869)
+  background-color: rgba(80, 69, 82, 0.869)
 }
 
 nav {
@@ -17,15 +17,18 @@ nav {
   height: 34px;
   color: rgb(195, 195, 195);
   padding: 2px 6px 2px 6px;
-  background-color: rgb(0, 0, 0, 0.3);
+  background-color: rgba(6, 1, 1, 0.3);
   border: 3px solid rgb(0, 0, 0);
   font-family: 'Rubik Mono One', monospace;
   word-spacing: -7px;
   border-radius: 22px;
+  text-decoration: none;
 }
 
 .login:hover {
-  background-color: rgb(0, 0, 0);
+  color: rgb(0, 0, 0);
+  background-color: rgb(195, 195, 195, 0.101);
+  text-decoration: none;
 }
 
 .logout {
@@ -34,17 +37,19 @@ nav {
   height: 34px;
   color: rgb(0, 0, 0);
   padding: 2px 6px 2px 6px;
-  background-color: rgba(195, 195, 195, 0.101);
-  border: 1.3px solid rgb(0, 0, 0);
+  background-color: rgba(195, 195, 195, 0.3);
+  border: 3px solid rgb(0, 0, 0);
   font-family: 'Rubik Mono One', monospace;
   word-spacing: -7px;
   border-radius: 22px;
+  text-decoration: none;
 }
 
 .logout:hover {
   background-color: rgb(0, 0, 0);
   color: rgb(195, 195, 195);
   transition: color 0.3s ease;
+  text-decoration: none;
 }
 
 .login img {
@@ -57,8 +62,8 @@ nav {
   height: 34px;
   color: rgb(0, 0, 0);
   padding: 2px;
-  background-color: rgba(195, 195, 195, 0.101);
-  border: 1.3px solid rgb(0, 0, 0);
+  background-color: rgba(195, 195, 195, 0.3);
+  border: 3px solid rgb(0, 0, 0);
   font-family: 'Rubik Mono One', monospace;
   word-spacing: -7px;
   border-radius: 20px;
@@ -113,7 +118,15 @@ p {
 }
 
 h2 {
-  font-size: 2em;
+  font-size: 2.5em;
+  font-family: 'Roboto Mono', monospace;
+  text-align: center;
+  color: white;
+  text-transform: uppercase;
+}
+
+h3 {
+  font-size: 1.5em;
   font-family: 'Roboto Mono', monospace;
   text-align: center;
   color: white;
@@ -142,14 +155,13 @@ h2 {
   margin-bottom: 10px;
   box-sizing: border-box;
   font-family: 'Roboto Mono', monospace;
-
 }
 
 #new-form input[type="submit"], #new-form-venue input[type="submit"] {
-  background-color: rgb(0, 0, 0);
+  background-color: rgb(185, 49, 142);
   font-family: 'Roboto Mono', monospace;
   text-transform: uppercase;
-  color: #fff;
+  color: white;
   cursor: pointer;
 }
 
@@ -160,39 +172,98 @@ h2 {
 table {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 20px;
+  background-color: rgba(195, 195, 195, 0.3);
+  border-radius: 8px; 
+  overflow: hidden;
 }
 
 thead {
-  background-color: #333;
-  color: #fff;
+  background-color: #000000;
+  color: rgb(255, 255, 255);
+}
+
+th {
+  padding: 10px;
 }
 
 th, td {
-  padding: 12px;
-  border: 1px solid #ddd;
+  border: 3px solid rgb(255, 255, 255);
   text-align: left;
 }
 
 tbody tr:nth-child(even) {
-  background-color: #f2f2f2;
+  background-color: rgb(195, 195, 195);
 }
 
-a {
+td {
+  position: relative;
+  padding: 10px 10px 10px 15px;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 16px;
+}
+
+a.details-link {
+  display: inline-block; 
+  margin-right: 4px;
   text-decoration: none;
-  color: #007bff; 
+  font-size: 15px;
+  font-weight: bold;
+  color: rgb(0, 0, 0);
+  text-decoration: underline;
+}
+
+a.details-link:hover {
+  text-decoration: underline;
+  color: rgb(51, 0, 255);
 }
 
 .submitbtn {
-  background-color: #dc3545;
-  color: #fff;
-  padding: 8px;
+  display: inline-block; 
+  background-color: rgb(215, 11, 11);
+  color: rgb(255, 255, 255);
   border: none;
+  padding: 4px 8px;
   cursor: pointer;
+  border-radius: 2px;
+  transition: background-color 0.3s;
+  margin-top: 6px;
+  position: relative;
+  top: 50%; 
 }
 
 .submitbtn:hover {
-  background-color: #c82333; 
+  background-color: rgb(241, 26, 26);
+  transition-duration: 0.3s;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+#show-page {
+  margin: 16px auto;
+  max-width: 600px;
+  background-color: rgba(195, 195, 195, 0.3);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+#show-page div {
+  margin-bottom: 10px;
+}
+
+#show-page div:first-child {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: rgb(185, 49, 142);
+}
+
+#show-page div:nth-child(even) {
+  font-family: 'Roboto Mono', monospace;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+#show-page div:nth-child(odd) {
+  font-family: 'Rubik Mono One', monospace;
+  color: rgba(0, 0, 0, 0.9);
 }
 
 .rating {
@@ -206,18 +277,90 @@ a {
 .rating label {
   float: right;
   cursor: pointer;
-  color: #ccc;
+  color: rgb(255, 255, 255);
   transition: color 0.3s;
 }
 
 .rating label:before {
   content: '\2605';
-  font-size: 30px;
+  font-size: 40px;
+  letter-spacing: 2px;
 }
 
-.rating input:checked ~ label,
-.rating label:hover,
-.rating label:hover ~ label {
-  color: #6f00ff;
+#add-review-form {
+  margin: 16px auto;
+  max-width: 600px;
+  background-color: rgba(195, 195, 195, 0.3);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+#add-review-form label {
+  display: block;
+  margin-bottom: 10px;
+  font-family: 'Rubik Mono One', monospace;
+  color: rgba(0, 0, 0, 0.9);
+}
+
+#add-review-form textarea {
+  width: 100%;
+  padding: 6px;
+  margin-bottom: 16px;
+  box-sizing: border-box;
+  font-family: 'Roboto Mono', monospace;
+}
+
+#add-review-form .rating {
+  display: inline-block;
+}
+
+#add-review-form .rating label {
+  cursor: pointer;
+  color: rgb(255, 255, 255);
   transition: color 0.3s;
+}
+
+#add-review-form .rating input:checked ~ label,
+#add-review-form .rating label:hover,
+#add-review-form .rating label:hover ~ label {
+  color: rgb(185, 49, 142);
+  transition: color 0.3s;
+}
+
+#add-review-form input[type="submit"] {
+  background-color: rgb(185, 49, 142);
+  font-family: 'Roboto Mono', monospace;
+  text-transform: uppercase;
+  color: white;
+  cursor: pointer;
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+#add-review-form input[type="submit"]:hover {
+  background-color: rgb(181, 7, 7);
+}
+
+textarea {
+  resize: none;
+}
+
+.avatar-img {
+  width: 40px; 
+  height: 40px; 
+  border-radius: 50%;
+  margin-right: 8px; 
+}
+
+.dltreview {
+  color: rgb(0, 0, 0);
+  background-color: rgb(255, 255, 255);
+}
+
+.dltreview:hover {
+  color: rgb(255, 255, 255);
+  background-color: rgb(97, 97, 97);
+  cursor: pointer;
 }

@@ -29,9 +29,9 @@
         <td><%= v.location %></td>
         <td><%= formatCustomDate(v.date) %></td>
         <td><%= v.indoorOutdoor %></td>
-        <td><a href="/venues/<%= v._id %>">DETAILS</a>
+        <td><a class="details-link" href="/venues/<%= v._id %>">DETAILS</a>
         <form action="/venues/<%= v._id %>?_method=DELETE" method="POST">
-          <button class="submitbtn" type="submit">X</button>
+          <button class="submitbtn" type="submit">Delete</button>
         </form>
       </td>
     </tr>
