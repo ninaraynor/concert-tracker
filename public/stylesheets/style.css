@@ -170,36 +170,41 @@ h3 {
 }
 
 table {
-  width: 100%;
-  border-collapse: collapse;
+  border-collapse: separate;
+  margin: 16px auto;
+  max-width: 800px;
   background-color: rgba(195, 195, 195, 0.3);
-  border-radius: 8px; 
-  overflow: hidden;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 thead {
+  border-radius: 8px;
   background-color: #000000;
   color: rgb(255, 255, 255);
 }
 
-th {
-  padding: 10px;
-}
-
 th, td {
-  border: 3px solid rgb(255, 255, 255);
   text-align: left;
+  padding: 10px 10px 10px 15px;
+  font-size: 15px;
 }
 
-tbody tr:nth-child(even) {
-  background-color: rgb(195, 195, 195);
+th {
+  font-family: 'Rubik Mono One', monospace;
+  text-transform: uppercase;
+  color: white;
+  border-radius: 8px;
 }
 
 td {
-  position: relative;
-  padding: 10px 10px 10px 15px;
   font-family: 'Roboto Mono', monospace;
-  font-size: 16px;
+  color: rgba(0, 0, 0, 0.9);
+}
+
+th, td {
+  border: none;
 }
 
 a.details-link {
@@ -226,7 +231,7 @@ a.details-link:hover {
   cursor: pointer;
   border-radius: 2px;
   transition: background-color 0.3s;
-  margin-top: 6px;
+  margin-top: 8px;
   position: relative;
   top: 50%; 
 }
