@@ -1,5 +1,11 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
 body {
-  padding: 50px;
+  padding: 50px 50px 10px 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   background-color: rgba(80, 69, 82, 0.869)
 }
@@ -99,11 +105,12 @@ nav {
 h1 {
   font-size: 8em;
   text-align: center;
-  margin-top: 60px;
-  margin-bottom: 4px; 
+  margin-top: 70px;
   font-family: 'MuseoModerno', sans-serif;
   letter-spacing: -3.2px;
   color: rgb(0, 0, 0);
+  line-height: 1;
+  padding: 10px;
 }
 
 p {
@@ -112,7 +119,6 @@ p {
   color: rgb(185, 49, 142);
   font-family: 'Rubik Mono One', monospace;
   word-spacing: -8px;
-  margin-top: 4px; 
   margin-bottom: 45px; 
   opacity: .75;
 }
@@ -386,11 +392,23 @@ h5 {
 
 footer {
   position: fixed;
+  left: 0;
   bottom: 0;
   width: 100%;
-  max-width: 1200px;
+  background-color: rgba(0, 0, 0, 0.869); 
+  color: white;
   text-align: center;
-  color: rgb(255, 255, 255);
-  padding: 20px 0;
+  padding: 8px;
+}
+
+
+@media screen and (max-width: 750px) {
+  h1 {
+    font-size: 6.4em;
+    line-height: 1;
+  }
+  p {
+    font-size: 14px;
+  }
 }
 
